@@ -19,20 +19,17 @@ public class Party {
         System.out.println("Podaj numer telefonu:");
         int phoneNumber = Integer.valueOf(scanner.nextLine());
 
-        System.out.println("Czy jest Weganinem? (Y/N):");
-        String isVeganString = scanner.nextLine();
-
         boolean isVegan = false;
+        String isVeganString = "";
 
-        //TODO dodac petle
-
-            if (isVeganString.equals("Y")) {
-                isVegan = true;
-            } else if (isVeganString.equals("N")) {
-                isVegan = false;
-            } else {
-                System.out.println("Podaj poprawna wartosc:");
+            while(!isVeganString.equalsIgnoreCase("Y") && !isVeganString.equalsIgnoreCase("N")){
+                System.out.println("Czy jestes weganinem (Y/N)?");
                 isVeganString = scanner.nextLine();
+            }
+            if (isVeganString.equalsIgnoreCase("Y")) {
+                isVegan = true;
+            } else if (isVeganString.equalsIgnoreCase("N")) {
+                isVegan = false;
             }
 
 
